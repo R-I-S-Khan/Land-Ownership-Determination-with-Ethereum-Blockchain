@@ -1,17 +1,19 @@
 //Redwan Khan
-pragma solidity ^0.4.0;
+pragma solidity ^0.4.25;
 
 contract LandOwner {
 
-     string public LandName = "230 Comstock Avenue";
-     string public Owner = "Jack";
+     string public LandName = "250 Comstock Avenue";
+     string public Owner = "Annie";
+     uint private Social_Security;
      uint public askingPrice;
      bool public  eligible_for_sale;
      uint constant minimumsellingprice = 1000;
 
-     function setName(string Lname, string ownerName) public {
+     function setName(string Lname, string ownerName, uint ss) public {
         LandName = Lname;
         Owner = ownerName;
+        Social_Security = ss;
     }
 
     function setAskingPrice(uint askPrice) public {
@@ -23,9 +25,11 @@ contract LandOwner {
         else eligible_for_sale = false;
 
     }
-    function changeOwner(string name) public{
-        if(eligible_for_sale)
+    function changeOwner(string name,uint ss) public{
+        if(eligible_for_sale){
             Owner = name;
+            Social_Security = ss;
+        }
     }
 
 }
