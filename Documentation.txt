@@ -1,0 +1,29 @@
+Smart Contract - LandOwner 
+
+--------VARIABLES----------------
+LandName and Owner is public to the world.
+
+Social Security is private as it is personal information of a person but also necessary for identification.
+
+AskingPrice - The price that buyer is willing to pay for property.
+
+minimumsellingprice - The price that seller is willing to sell property.
+
+eligible_for_sale - public boolean variable that shows whether the property can be sold at the price.
+
+
+--------FUNCTIONS---------------
+
+
+function setName(string Lname, string ownerName, uint ss) public - 
+	A public function that sets the property ownership to a particular person with a social security.
+
+function setAskingPrice(uint askPrice) public
+	A public function that sets the asking price of property.
+	
+
+function determineifLandCanBeSold() public
+	A public function that determines if the property can be sold. 
+
+function changeOwner(string name,uint ss) public
+	A public function that changes the ownership of property whenever all other conditions meet.
